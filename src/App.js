@@ -1,6 +1,6 @@
 
 import './App.css';
-import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 import {Home} from './components/Home';
 import Navbar from "./components/Navbar";
 import {CreatePost} from './components/CreatePost';
@@ -9,11 +9,12 @@ import {Logout} from './components/Logout';
 import {useState} from "react";
 
 function App() {
+    //認証状態を格納する状態変数
+    //画面更新したら再度ログインしなくてもいいためにローカルストレージからに認証状態を設定する
     const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
-
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar isAuth={isAuth}/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -22,7 +23,7 @@ function App() {
         <Route path="/logout" element={<Logout />}></Route>
       </Routes>
 
-    </Router>
+    </BrowserRouter>
   );
 }
 

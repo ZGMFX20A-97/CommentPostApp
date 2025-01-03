@@ -9,22 +9,21 @@ import { faHouse,faFilePen,faArrowRightToBracket } from '@fortawesome/free-solid
 
 
 
-const Navbar = ({isAuth}) => {
+const Navbar = ({ isAuth }) => {
   return (
       <nav>
           <Link to="/">
               <FontAwesomeIcon icon={faHouse} />ホーム
           </Link>
-
+          
+            {/* ログインしていない場合はログインボタンを表示、した場合は記事投稿とログアウトのボタンを表示する */}
           {!isAuth ?
               (<Link to="/login"><FontAwesomeIcon icon={faArrowRightToBracket} />ログイン</Link>)
               :
               (<>
                   <Link to="/createpost"><FontAwesomeIcon icon={faFilePen} isAuth={isAuth}/>記事投稿</Link>
                   <Link to="/logout"><FontAwesomeIcon icon={faArrowRightToBracket} />ログアウト</Link>
-
               </>)
-
           }
 
       </nav>

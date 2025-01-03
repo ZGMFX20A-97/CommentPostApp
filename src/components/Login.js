@@ -3,19 +3,21 @@ import {auth,provider} from "../firebase";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
-export const Login = ({setIsAuth})=>{
+export const Login = ({ setIsAuth })=>{
+
     const navigate = useNavigate();
+
     const loginWithGoogle = () => {
-        signInWithPopup(auth,provider).then((result) =>{
+        //Google認証でログインする
+        signInWithPopup(auth,provider)
+        .then( result =>{
+            //ログインした状態をローカルストレージに保存する
             localStorage.setItem("isAuth","true");
             setIsAuth(true);
+            //ログインした後ホーム画面へリダイレクトする
             navigate("/");
         });
     };
-
-
-
-
 
     return (
         <div>
