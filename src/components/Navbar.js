@@ -3,12 +3,6 @@ import  "./Navbar.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse,faFilePen,faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
-
-
-
-
-
-
 const Navbar = ({ isAuth }) => {
   return (
       <nav>

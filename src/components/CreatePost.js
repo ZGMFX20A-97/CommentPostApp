@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect,useState} from "react";
 import "./CreatePost.css"
 import {addDoc,collection} from "firebase/firestore"
 import {auth, db} from "../firebase"

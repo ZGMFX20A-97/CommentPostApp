@@ -16,7 +16,7 @@ export const Login = ({ setIsAuth })=>{
             setIsAuth(true);
             //ログインした後ホーム画面へリダイレクトする
             navigate("/");
-        });
+        }).catch( e => {return;});
     };
 
     return (
