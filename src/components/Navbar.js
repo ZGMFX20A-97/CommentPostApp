@@ -15,7 +15,7 @@ const Navbar = ({ isAuth }) => {
               (<Link to="/login"><FontAwesomeIcon icon={faArrowRightToBracket} />ログイン</Link>)
               :
               (<>
-                  <Link to="/createpost"><FontAwesomeIcon icon={faFilePen} isAuth={isAuth}/>記事投稿</Link>
+                  <Link to="/createpost"><FontAwesomeIcon icon={faFilePen} />記事投稿</Link>
                   <Link to="/logout"><FontAwesomeIcon icon={faArrowRightToBracket} />ログアウト</Link>
               </>)
           }
